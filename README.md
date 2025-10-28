@@ -1,8 +1,8 @@
 # TesteDjango
 
-Aplica��o Django com django-ninja
+Aplicação Django com django-ninja
 
-## Pr�-requisitos
+## Pré-requisitos
 
 - Docker
 - Docker Compose
@@ -15,13 +15,13 @@ Aplica��o Django com django-ninja
 docker-compose build
 ```
 
-### 2. Iniciar a aplica��o
+### 2. Iniciar a aplicação
 
 ```bash
 docker-compose up
 ```
 
-A aplica��o estar� dispon�vel em: `http://localhost:9000`
+A aplicação estará disponível em: `http://localhost:9000`
 
 ### 3. Iniciar em modo detached (background)
 
@@ -29,7 +29,7 @@ A aplica��o estar� dispon�vel em: `http://localhost:9000`
 docker-compose up -d
 ```
 
-### 4. Ver logs da aplica��o
+### 4. Ver logs da aplicação
 
 ```bash
 # Ver todos os logs
@@ -38,7 +38,7 @@ docker-compose logs
 # Ver logs em tempo real
 docker-compose logs -f
 
-# Ver logs de um servi�o espec�fico
+# Ver logs de um serviço específico
 docker-compose logs -f web
 ```
 
@@ -47,13 +47,13 @@ docker-compose logs -f web
 Para executar comandos do Django dentro do container:
 
 ```bash
-# Criar um superusu�rio
+# Criar um superusuário
 docker-compose exec web uv run python manage.py createsuperuser
 
-# Criar novas migra��es
+# Criar novas migrações
 docker-compose exec web uv run python manage.py makemigrations
 
-# Aplicar migra��es
+# Aplicar migrações
 docker-compose exec web uv run python manage.py migrate
 
 # Shell do Django
@@ -63,7 +63,7 @@ docker-compose exec web uv run python manage.py shell
 docker-compose exec web bash
 ```
 
-### 6. Parar a aplica��o
+### 6. Parar a aplicação
 
 ```bash
 # Parar containers
@@ -76,7 +76,7 @@ docker-compose down
 docker-compose down -v --rmi all
 ```
 
-### 7. Rebuild (ap�s mudan�as em depend�ncias)
+### 7. Rebuild (após mudanças em dependências)
 
 ```bash
 docker-compose down
@@ -84,19 +84,19 @@ docker-compose build --no-cache
 docker-compose up
 ```
 
-### 8. Comandos �teis adicionais
+### 8. Comandos Úteis adicionais
 
 ```bash
-# Ver containers em execu��o
+# Ver containers em execução
 docker-compose ps
 
 # Ver uso de recursos
 docker stats
 
-# Limpar volumes n�o utilizados
+# Limpar volumes não utilizados
 docker volume prune
 
-# Reiniciar um servi�o espec�fico
+# Reiniciar um serviço específico
 docker-compose restart web
 ```
 
@@ -105,10 +105,10 @@ docker-compose restart web
 Se preferir executar localmente sem Docker:
 
 ```bash
-# Instalar depend�ncias
+# Instalar dependências
 uv sync
 
-# Aplicar migra��es
+# Aplicar migrações
 uv run python manage.py migrate
 
 # Iniciar servidor
@@ -117,10 +117,10 @@ uv run python manage.py runserver
 
 ## Estrutura do Projeto
 
-- `config/` - Configura��es do Django
-- `users/` - App de usu�rios
+- `config/` - Configurações do Django
+- `users/` - App de usuários
 - `manage.py` - Script de gerenciamento do Django
-- `pyproject.toml` - Depend�ncias do projeto (gerenciadas pelo uv)
+- `pyproject.toml` - Dependências do projeto (gerenciadas pelo uv)
 
 ## Admin
 
